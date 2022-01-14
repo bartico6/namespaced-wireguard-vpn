@@ -12,7 +12,6 @@ case "$1" in
         wg set "$WIREGUARD_NAME" \
             private-key <(echo "$WIREGUARD_PRIVATE_KEY") \
             peer "$WIREGUARD_VPN_PUBLIC_KEY" \
-                endpoint "$WIREGUARD_ENDPOINT" \
                 allowed-ips "$WIREGUARD_ALLOWED_IPS" || die
 
         ip link set "$WIREGUARD_NAME" netns "$NETNS_NAME" || die

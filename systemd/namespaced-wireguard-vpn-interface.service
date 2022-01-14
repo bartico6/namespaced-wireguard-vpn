@@ -2,7 +2,7 @@
 #     https://cloudnull.io/2019/04/running-services-in-network-name-spaces-with-systemd/
 
 [Unit]
-Description=VPN Wireguard Interface
+Description=WireGuard Reverse-Proxy Interface
 PartOf=namespaced-wireguard-vpn.target
 Requires=namespaced-wireguard-vpn-netns.service
 After=namespaced-wireguard-vpn-netns.service
