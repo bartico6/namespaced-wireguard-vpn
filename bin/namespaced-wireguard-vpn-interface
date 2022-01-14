@@ -10,6 +10,7 @@ case "$1" in
         ip link add "$WIREGUARD_NAME" type wireguard || die
 
         wg set "$WIREGUARD_NAME" \
+            listen-port "$WIREGUARD_LISTEN_PORT"
             private-key <(echo "$WIREGUARD_PRIVATE_KEY") \
             peer "$WIREGUARD_VPN_PUBLIC_KEY" \
                 allowed-ips "$WIREGUARD_ALLOWED_IPS" || die
